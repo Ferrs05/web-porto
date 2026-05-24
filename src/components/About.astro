@@ -1,0 +1,199 @@
+---
+import { Check, Coffee, Dumbbell, Gamepad2, GraduationCap, ShieldCheck, Sparkles } from 'lucide-react';
+
+const facts = [
+  { icon: GraduationCap, label: 'Currently Studying', value: 'Machine Learning and Deep Learning' },
+  { icon: Sparkles, label: 'Favorite Area', value: 'Frontend and Website Development' },
+  { icon: ShieldCheck, label: 'Extra Background', value: '5-Month Red Team Bootcamp' },
+  { icon: Dumbbell, label: 'Hobbies', value: 'Gym, gaming, technology, and UI exploration' },
+  { icon: Coffee, label: 'Favorite Drinks', value: 'Coffee and matcha' },
+  { icon: Gamepad2, label: 'Work Style', value: 'Practical, curious, and detail-oriented' },
+];
+
+const stats = [
+  { value: '6th', label: 'Semester Student' },
+  { value: '5 Mo', label: 'Red Team Bootcamp' },
+  { value: '6+', label: 'Projects Built' },
+  { value: 'Web', label: 'Favorite Focus' },
+];
+
+const skills = ['UI implementation', 'Web development', 'Machine learning exploration', 'Security-aware thinking'];
+---
+
+<section id="about" class="section about">
+  <div class="container">
+    <div class="section-head">
+      <p class="eyebrow">About Me</p>
+      <h2 class="section-title">Best direction: <span class="accent-serif">web developer</span> in progress.</h2>
+      <p class="section-lead">
+        I am currently in my 6th semester, developing my academic foundation while continuing to build practical
+        software projects. My coursework has pushed me toward machine learning and deep learning, but my strongest
+        personal interest remains in web development.
+      </p>
+    </div>
+    <div class="about-grid">
+      <div class="story card">
+        <h3>Developer & student with a practical build mindset.</h3>
+        <p>
+          I enjoy turning ideas into structured, usable products. My project history includes full-stack web
+          applications, machine learning interfaces, classification tools, and real-time web experiences.
+        </p>
+        <p>
+          My red team bootcamp background helps me approach software with stronger awareness of systems, risk, and
+          application security. I am still growing, but I care about building interfaces that are clear, maintainable,
+          and useful.
+        </p>
+        <div class="skill-list">
+          {skills.map((skill) => (
+            <span><Check size={15} /> {skill}</span>
+          ))}
+        </div>
+      </div>
+      <div class="stat-grid">
+        {stats.map((stat) => (
+          <article class="stat card">
+            <strong>{stat.value}</strong>
+            <span>{stat.label}</span>
+          </article>
+        ))}
+      </div>
+    </div>
+    <div class="facts">
+        {facts.map((fact) => {
+          const Icon = fact.icon;
+          return (
+            <article class="fact card">
+              <Icon size={21} aria-hidden="true" />
+              <div>
+                <span>{fact.label}</span>
+                <strong>{fact.value}</strong>
+              </div>
+            </article>
+          );
+        })}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.86fr;
+    gap: 24px;
+    margin-top: 42px;
+  }
+
+  .story {
+    padding: 34px;
+  }
+
+  .story h3 {
+    margin: 0 0 18px;
+    font-size: clamp(1.55rem, 3vw, 2.35rem);
+    line-height: 1.08;
+    text-transform: uppercase;
+  }
+
+  .story p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 1.85;
+  }
+
+  .story p + p {
+    margin-top: 18px;
+  }
+
+  .skill-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .skill-list span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ink);
+    font-size: 0.86rem;
+    font-weight: 900;
+  }
+
+  .skill-list svg {
+    color: var(--accent);
+  }
+
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+  }
+
+  .stat {
+    display: grid;
+    place-items: center;
+    min-height: 142px;
+    padding: 18px;
+    text-align: center;
+  }
+
+  .stat strong {
+    color: var(--ink);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1;
+  }
+
+  .stat span {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+  }
+
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 14px;
+  }
+
+  .fact {
+    display: flex;
+    gap: 14px;
+    min-height: 118px;
+    padding: 18px;
+  }
+
+  .fact svg {
+    flex: 0 0 auto;
+    color: var(--accent);
+  }
+
+  .fact span {
+    display: block;
+    color: var(--muted);
+    font-size: 0.82rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .fact strong {
+    display: block;
+    margin-top: 8px;
+    line-height: 1.35;
+  }
+
+  @media (max-width: 860px) {
+    .about-grid,
+    .stat-grid,
+    .facts {
+      grid-template-columns: 1fr;
+    }
+
+    .skill-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

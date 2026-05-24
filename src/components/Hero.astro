@@ -1,0 +1,287 @@
+---
+import { ArrowDown, Mail, Play, Sparkles } from 'lucide-react';
+---
+
+<section id="home" class="hero section">
+  <div class="container hero-grid">
+    <div class="portrait-wrap">
+      <div class="orbit orbit-one"></div>
+      <div class="orbit orbit-two"></div>
+      <div class="stamp">WEB DEV<br />STUDENT</div>
+      <div class="side-label">Based in Indonesia</div>
+      <img src="/profile-photo.jpg" alt="Portrait of Muhammad Ferry Saputra" />
+    </div>
+    <div class="hero-copy">
+      <p class="intro"><Sparkles size={18} /> Hi, I am Muhammad Ferry Saputra</p>
+      <p class="eyebrow">Personal Portfolio</p>
+      <h1>A Developer <span class="accent-serif">& Student</span></h1>
+      <h2>Building Web Experiences</h2>
+      <p class="hero-lead">
+        I build structured, usable, and visually clear web interfaces while growing through academic work in machine
+        learning and deep learning.
+      </p>
+      <p class="hero-body">
+        My strongest confidence is in frontend development and website creation, supported by full-stack projects and a
+        5-month cybersecurity red team bootcamp.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#projects"><ArrowDown size={18} /> View Projects</a>
+        <a class="btn play" href="#stack"><Play size={17} /> Explore Stack</a>
+        <a class="btn" href="#contact"><Mail size={18} /> Contact Me</a>
+      </div>
+      <div class="hero-meta">
+        <span>6th Semester Student</span>
+        <span>Frontend Focus</span>
+        <span>Red Team Bootcamp</span>
+      </div>
+    </div>
+  </div>
+  <div class="neon-mark" aria-hidden="true"></div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+    padding-top: 72px;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.05fr);
+    gap: 64px;
+    align-items: center;
+  }
+
+  .intro {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0 0 18px;
+    color: var(--warm);
+    font-weight: 800;
+  }
+
+  h1 {
+    max-width: 820px;
+    margin: 12px 0 0;
+    font-size: clamp(3.2rem, 7.2vw, 7.4rem);
+    line-height: 0.88;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  h2 {
+    margin: 16px 0 0;
+    color: var(--warm);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2.1rem, 4.5vw, 4.6rem);
+    font-style: italic;
+    line-height: 0.95;
+    text-transform: uppercase;
+  }
+
+  .hero-lead {
+    margin: 24px 0 0;
+    max-width: 640px;
+    color: var(--ink);
+    font-size: clamp(1.08rem, 1.6vw, 1.35rem);
+    font-weight: 800;
+    line-height: 1.45;
+  }
+
+  .hero-body {
+    margin: 18px 0 0;
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 1.03rem;
+    line-height: 1.82;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 32px;
+  }
+
+  .play {
+    border-color: var(--line-strong);
+    color: var(--accent);
+  }
+
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 30px;
+  }
+
+  .hero-meta span {
+    padding: 9px 11px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: var(--accent-soft);
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-weight: 900;
+  }
+
+  .portrait-wrap {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  .portrait-wrap img {
+    position: relative;
+    z-index: 3;
+    width: min(100%, 440px);
+    aspect-ratio: 4 / 5.25;
+    object-fit: cover;
+    object-position: center top;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 18px 18px 8px 8px;
+    box-shadow: 0 34px 90px rgba(0, 0, 0, 0.55);
+    filter: contrast(1.04) saturate(0.92);
+  }
+
+  .orbit {
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.58);
+    border-radius: 50%;
+    pointer-events: none;
+  }
+
+  .orbit-one {
+    z-index: 1;
+    width: 470px;
+    height: 470px;
+    bottom: 58px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-color: rgba(255, 255, 255, 0.52);
+    clip-path: inset(0 0 18% 0);
+  }
+
+  .orbit-two {
+    z-index: 2;
+    width: 330px;
+    height: 330px;
+    top: 66px;
+    right: 0;
+    border-color: var(--accent);
+    border-style: dashed;
+    opacity: 0.75;
+  }
+
+  .stamp {
+    position: absolute;
+    z-index: 4;
+    top: 48px;
+    right: 42px;
+    display: grid;
+    place-items: center;
+    width: 118px;
+    height: 118px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    color: var(--accent);
+    font-size: 0.77rem;
+    font-weight: 950;
+    line-height: 1.2;
+    text-align: center;
+    transform: rotate(-12deg);
+    box-shadow: 0 0 30px var(--accent-glow);
+  }
+
+  .side-label {
+    position: absolute;
+    z-index: 4;
+    top: 154px;
+    left: -6px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
+
+  .side-label::before {
+    content: "";
+    display: inline-block;
+    width: 46px;
+    height: 2px;
+    margin-bottom: 10px;
+    background: var(--accent);
+  }
+
+  .neon-mark {
+    position: absolute;
+    right: -48px;
+    bottom: 54px;
+    width: 160px;
+    height: 160px;
+    background:
+      linear-gradient(var(--accent), var(--accent)) center / 100% 16px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) center / 16px 100% no-repeat;
+    transform: rotate(24deg);
+    opacity: 0.85;
+  }
+
+  .neon-mark::before,
+  .neon-mark::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(var(--accent), var(--accent)) center / 100% 16px no-repeat,
+      linear-gradient(var(--accent), var(--accent)) center / 16px 100% no-repeat;
+  }
+
+  .neon-mark::before {
+    transform: rotate(45deg);
+  }
+
+  .neon-mark::after {
+    transform: rotate(-45deg);
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      padding-top: 48px;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+
+    .portrait-wrap {
+      order: 2;
+      min-height: 460px;
+      max-width: 440px;
+    }
+
+    .hero-copy {
+      order: 1;
+    }
+
+    .stamp,
+    .side-label,
+    .neon-mark {
+      display: none;
+    }
+
+    .orbit-one {
+      width: 370px;
+      height: 370px;
+    }
+  }
+</style>

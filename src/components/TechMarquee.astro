@@ -1,0 +1,140 @@
+---
+import { techStack } from '../data/techStack';
+const categories = [
+  { title: 'Web', items: 'HTML, CSS, JavaScript, TypeScript, React, Astro, Vite, Tailwind CSS' },
+  { title: 'Backend', items: 'Laravel, PHP, Node.js, Express, MySQL' },
+  { title: 'AI / ML', items: 'Python, TensorFlow, Streamlit, scikit-learn, Gradio' },
+  { title: 'Tools', items: 'Git, GitHub, deployment workflows, project documentation' },
+];
+---
+
+<section id="stack" class="section stack">
+  <div class="container">
+    <p class="eyebrow">Tech Stack</p>
+    <h2 class="section-title">Tools and technologies I have worked with.</h2>
+    <p class="section-lead">
+      My stack reflects web development as the main focus, supported by backend, machine learning, and real-time
+      application experiments.
+    </p>
+    <div class="category-grid">
+      {categories.map((category) => (
+        <article class="category card">
+          <span>{category.title}</span>
+          <p>{category.items}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+  <div class="marquee" aria-label="Technology stack list">
+    <div class="marquee-track">
+      <div class="marquee-group">
+        {techStack.map((item) => <span>{item}</span>)}
+      </div>
+      <div class="marquee-group" aria-hidden="true">
+        {techStack.map((item) => <span>{item}</span>)}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack {
+    overflow: hidden;
+  }
+
+  .marquee {
+    width: 100%;
+    margin-top: 44px;
+    border-block: 1px solid var(--line);
+    background: rgba(34, 211, 238, 0.045);
+    overflow: hidden;
+  }
+
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-slide 32s linear infinite;
+    will-change: transform;
+  }
+
+  .marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+
+  .marquee-group {
+    display: flex;
+    flex: 0 0 auto;
+    gap: 12px;
+    padding: 18px 6px;
+  }
+
+  .marquee span {
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 16px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #0f172a;
+    color: var(--accent);
+    font-weight: 900;
+    white-space: nowrap;
+    box-shadow: 0 0 18px rgba(34, 211, 238, 0.08);
+  }
+
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 34px;
+  }
+
+  .category {
+    min-height: 170px;
+    padding: 22px;
+  }
+
+  .category span {
+    display: inline-flex;
+    padding: 8px 10px;
+    border: 1px solid var(--line-strong);
+    border-radius: 8px;
+    color: var(--accent);
+    font-weight: 950;
+    text-transform: uppercase;
+  }
+
+  .category p {
+    margin: 20px 0 0;
+    color: var(--muted);
+    line-height: 1.72;
+  }
+
+  @keyframes marquee-slide {
+    from {
+      transform: translateX(0);
+    }
+
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  @media (max-width: 980px) {
+    .category-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 640px) {
+    .category-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+      animation: marquee-slide 32s linear infinite !important;
+    }
+  }
+</style>

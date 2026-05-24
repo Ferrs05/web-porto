@@ -1,0 +1,28 @@
+---
+import '../styles/global.css';
+
+const {
+  title = 'Muhammad Ferry Saputra | Personal Portfolio',
+  description = 'Frontend-focused web developer with full-stack project experience, currently exploring machine learning, deep learning, and practical web systems.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <meta property="og:title" content="Muhammad Ferry Saputra | Portfolio" />
+    <meta property="og:description" content="Explore Ferry's profile, technical stack, full-stack web projects, machine learning experiments, and contact information." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/og-image.svg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" type="image/png" href="/terminal.png" />
+    <link rel="apple-touch-icon" href="/terminal.png" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
